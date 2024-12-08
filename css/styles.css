@@ -258,6 +258,17 @@ button {
     position: absolute;
     top: 24px;
     right: 24px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        background-color: #e7e9fc;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-nav {
@@ -280,13 +291,7 @@ button {
     letter-spacing: 0.02em;
     color: #2e2f42;}
 
-.mobile-nav-link:hover,
-.mobile-nav-link:focus,
-.mobile-contacts-link:hover,
-.mobile-contacts-link:focus,
-.mobile-nav-link.current {
-    color: #404bbf;
-}
+
 
 .mobile-contacts-list {
     display: flex;
@@ -302,7 +307,22 @@ button {
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #4d5ae5;
+    color: #434455;
+    font-style: normal;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus,
+.mobile-contacts-link:hover,
+.mobile-contacts-link:focus,
+.mobile-nav-link.current, 
+.mobile-contacts-link.current {
+    color: #404bbf;
+}
+
+.icons-list.mobile {
+    gap: 40px;
+    justify-content: normal;
 }
 
 @media screen and (min-width: 768px) {
@@ -315,6 +335,7 @@ button {
 
 /* #region image */
 .image {
+    max-width: 320px;
     background: #2e2f42;
     padding: 72px 0;
     margin: 0 auto;
@@ -355,6 +376,7 @@ button {
 
 @media only screen and (min-width: 768px) {
     .image {
+        max-width: 768px;
         padding: 112px 0;
         background-image: linear-gradient(
             rgba(46, 47, 66, 0.7),
@@ -373,7 +395,7 @@ button {
 }
 
 @media only screen and (min-width: 768px) and (min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+only screen and (min-width: 768px) and (min-resolution: 2dppx) {
     .image {
         background-image: linear-gradient(
             rgba(46, 47, 66, 0.7),
@@ -400,7 +422,7 @@ button {
 }
 
 @media only screen and (min-width: 1158px) and (min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+ only screen and (min-width: 1158px) and (min-resolution: 2dppx) {
     .image {
         background-image: linear-gradient(
             rgba(46, 47, 66, 0.7),
@@ -618,6 +640,7 @@ button {
     letter-spacing: 0.02em;
     color: #434455;
     text-align: center;
+    margin-bottom: 8px;
 }
 
 .icons-item {
@@ -713,6 +736,10 @@ button {
 }
 
 @media screen and (min-width: 1158px) {
+
+    .portfolio {
+        padding: 120px 0;
+    }
     .portfolio-list {
         gap: 48px 24px;
     }
@@ -934,14 +961,11 @@ button {
 
 @media screen and (min-width: 768px) {
 
-    .page-footer {
-            padding: 100px 0 100px 108px;
-        }
-
     .footer-container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        padding: 0 108px;
     }
     
     .footer-logo {
@@ -979,6 +1003,15 @@ button {
     .footer-container {
         margin: 0 auto;
         flex-wrap: nowrap;
+        padding: 0 15px;
+    }
+
+    .footer-logo {
+        margin: 0 120px 0 0;
+    }
+
+    .footer-icons {
+        margin: 0;
     }
     .footer-email {
         margin-left: auto;
@@ -1023,11 +1056,10 @@ button {
     left: 50%;
 
     width: 288px;
-    height: 623px;
     
     min-height: 584px;
     border-radius: 4px;
-    padding: 72px 24px 24px 24px;
+    padding: 72px 16px 24px 16px;
 
     transform: translate(-50%, -50%);
 
